@@ -29,3 +29,4 @@ insert into usuario2 (nome, email, login, senha, genero)
 value ("josé", "jose@edu", "joserm", "maria", 'm');
 
 -- apagando usuários indesejados
+DELETE FROM usuario2 WHERE idusuario='2';
