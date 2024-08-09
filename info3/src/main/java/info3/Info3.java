@@ -14,8 +14,7 @@ import java.sql.SQLException;
 public class Info3 {
 
     public static void main(String[] args) throws SQLException {
-        Usuario u = new Usuario("", "", "", "", "");
+        var u = new Usuario("Emanuel", "teste@gmail.com", "God", "Lives", "M");
         u.Cadastrar();
-        
     }
 }
