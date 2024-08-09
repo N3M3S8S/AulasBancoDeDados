@@ -31,6 +31,7 @@ public class TelaCadastro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Genero = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         RecebeNome = new javax.swing.JTextField();
         LabelNome = new javax.swing.JLabel();
@@ -60,6 +61,7 @@ public class TelaCadastro extends javax.swing.JFrame {
 
         LabelGenero.setText("Gênero:");
 
+        Genero.add(BotaoHomem);
         BotaoHomem.setText("Masculino");
         BotaoHomem.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
@@ -76,12 +78,18 @@ public class TelaCadastro extends javax.swing.JFrame {
                 BotaoHomemMouseClicked(evt);
             }
         });
+        BotaoHomem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotaoHomemActionPerformed(evt);
+            }
+        });
         BotaoHomem.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 BotaoHomemKeyTyped(evt);
             }
         });
 
+        Genero.add(BotaoMulher);
         BotaoMulher.setText("Feminino");
 
         BotaoCadastrar.setText("Cadastrar");
@@ -184,7 +192,7 @@ public class TelaCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_BotaoHomemMouseDragged
 
     private void BotaoHomemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoHomemMouseClicked
-            BotaoMulher.setSelected(false);
+
     }//GEN-LAST:event_BotaoHomemMouseClicked
 
     private void BotaoCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoCadastrarActionPerformed
@@ -200,6 +208,10 @@ public class TelaCadastro extends javax.swing.JFrame {
             Logger.getLogger(TelaCadastro.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_BotaoCadastrarActionPerformed
+
+    private void BotaoHomemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoHomemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoHomemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -240,6 +252,7 @@ public class TelaCadastro extends javax.swing.JFrame {
     private javax.swing.JButton BotaoCadastrar;
     private javax.swing.JRadioButton BotaoHomem;
     private javax.swing.JRadioButton BotaoMulher;
+    private javax.swing.ButtonGroup Genero;
     private javax.swing.JLabel LabelCadastro;
     private javax.swing.JLabel LabelEmail;
     private javax.swing.JLabel LabelGenero;
