@@ -225,6 +225,7 @@ public class TelaCadastro extends javax.swing.JFrame {
             Logger.getLogger(TelaCadastro.class.getName()).log(Level.SEVERE, null, ex);
         }
         limpaTela();
+        JOptionPane.showMessageDialog(rootPane, "Cadastro concluído com sucesso! Chave do usuário: " + u.getIdusuario());
     }//GEN-LAST:event_BotaoCadastrarActionPerformed
 
     private void BotaoHomemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoHomemActionPerformed

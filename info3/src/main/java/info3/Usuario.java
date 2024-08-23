@@ -1,7 +1,9 @@
 package info3;
 
+import com.mysql.cj.xdevapi.Result;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
@@ -43,16 +45,21 @@ public class Usuario {
                 + " (nome, email, login, senha, genero) "
                 + " VALUES (?, ?, ?, ?, ?) ";
         //Filtrando contra SQL-INJECTION
-        PreparedStatement consulta = conexao.prepareStatement(sql);
+        PreparedStatement consulta = conexao.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
         consulta.setString(1, this.nome);
         consulta.setString(2, this.email);
         consulta.setString(3, this.login);
         consulta.setString(4, this.senha);
         consulta.setString(5, this.genero);
+        
         //executando a consulta/comando SQL
         consulta.executeUpdate();
-       //após cadastrar queremos pegar o idusuario
         
+       //após cadastrar queremos pegar o idusuario
+       ResultSet resultado = consulta.getGeneratedKeys();
+       resultado.next();
+       String idusuario = resultado.getString(1);
+       this.idusuario = idusuario;
     }
     
 
