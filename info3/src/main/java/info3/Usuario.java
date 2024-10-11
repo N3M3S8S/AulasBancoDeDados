@@ -1,5 +1,7 @@
 package info3;
 
+
+//Importando classes e pacotes necessários
 import com.mysql.cj.xdevapi.Result;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

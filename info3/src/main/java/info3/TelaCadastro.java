@@ -215,7 +215,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         String nome = RecebeNome.getText();
         String email = RecebeEmail.getText();
         String login = RecebeLogin.getText();
-        String senha = Arrays.toString(RecebeSenha.getPassword());
+        String senha = new String(RecebeSenha.getPassword());
         String genero = selgenero();
         
         Usuario u = new Usuario(nome, email, login, senha, genero);
