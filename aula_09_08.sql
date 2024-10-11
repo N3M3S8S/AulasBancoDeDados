@@ -1,6 +1,9 @@
 -- verificar bancos de dados já existentes
 show databases;
 
+-- criando uma base de dados para info3
+create database info3;
+
 --  escolhendo o banco de dados de info3
 use info3;
 

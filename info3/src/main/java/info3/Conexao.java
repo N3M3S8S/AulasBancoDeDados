@@ -17,7 +17,7 @@ public class Conexao {
     private static final String usuario="root";
     private static final String senha="";
     private static final String servidor="localhost";
-    private static final String porta="3306";
+    private static final String porta="3307";
     private static final String url="jdbc:mysql://"+servidor
             +":"+porta+"/"
             +basededados
