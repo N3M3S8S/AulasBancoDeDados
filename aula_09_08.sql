@@ -21,7 +21,7 @@ CREATE TABLE usuario2 (
     email VARCHAR(255) NOT NULL,
     login VARCHAR(255) NOT NULL,
     senha VARCHAR(255) NOT NULL,
-    genero CHAR NULL
+    genero CHAR(1) NULL
 );
 
 -- verificando linhas da tabela usuario
@@ -33,3 +33,11 @@ value ("josé", "jose@edu", "joserm", "maria", 'm');
 
 -- apagando usuários indesejados
 DELETE FROM usuario2 WHERE idusuario='5';
+
+--  apagando todos os dados da tabela
+drop table emprestimo;
+drop table livro;
+drop table usuario;
+drop table usuario2;
+
+
