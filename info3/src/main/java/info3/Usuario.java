@@ -7,6 +7,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  *  Representa a tabela usuario
@@ -64,7 +65,19 @@ public class Usuario {
        this.idusuario = idusuario;
     }
     
-
+    public ArrayList<Usuario> getUsuario() throws SQLException {
+        ArrayList<Usuario> ListaUsuarios = new ArrayList<>();
+        Connection conexao = Conexao.getConexao();
+        String sql="SELECT * FROM usuario";
+        PreparedStatement comando = conexao.prepareStatement(sql);
+        ResultSet resultado = comando.executeQuery();
+        while(resultado.next()) {
+            
+        }
+        return ListaUsuarios;
+    }
+    
+    
     public String getIdusuario() {
         return idusuario;
     }
