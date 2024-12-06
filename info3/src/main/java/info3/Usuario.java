@@ -44,7 +44,7 @@ public class Usuario {
     //método que cadastra um novo usuário
     public void Cadastrar() throws SQLException {
         Connection conexao = Conexao.getConexao();
-        String sql = "INSERT INTO usuario2"
+        String sql = "INSERT INTO usuario"
                 + " (nome, email, login, senha, genero) "
                 + " VALUES (?, ?, ?, ?, ?) ";
         //Filtrando contra SQL-INJECTION
@@ -72,7 +72,8 @@ public class Usuario {
         PreparedStatement comando = conexao.prepareStatement(sql);
         ResultSet resultado = comando.executeQuery();
         while(resultado.next()) {
-            
+            String idusuario = resultado.getString("idusuario");
+            String nome = resultado.getString("nome");
         }
         return ListaUsuarios;
     }

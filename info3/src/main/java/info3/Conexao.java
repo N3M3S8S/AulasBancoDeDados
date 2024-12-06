@@ -15,7 +15,7 @@ import java.sql.SQLException;
 public class Conexao {
     private static final String basededados="info3";
     private static final String usuario="root";
-    private static final String senha="123";
+    private static final String senha="123456";
     private static final String servidor="localhost";
     private static final String porta="3306";
     private static final String url="jdbc:mysql://"+servidor
