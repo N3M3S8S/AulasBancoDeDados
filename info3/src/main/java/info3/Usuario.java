@@ -65,7 +65,7 @@ public class Usuario {
        this.idusuario = idusuario;
     }
     
-    public ArrayList<Usuario> getUsuario() throws SQLException {
+    public ArrayList<Usuario> getUsuarios() throws SQLException {
         ArrayList<Usuario> ListaUsuarios = new ArrayList<>();
         Connection conexao = Conexao.getConexao();
         String sql="SELECT * FROM usuario";
