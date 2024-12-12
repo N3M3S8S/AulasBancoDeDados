@@ -2,6 +2,7 @@ package info3;
 
 
 //Importando classes e pacotes necessários
+import com.mysql.cj.xdevapi.AddResult;
 import com.mysql.cj.xdevapi.Result;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -23,7 +24,8 @@ public class Usuario {
     
     //método construtor 
 
-    public Usuario(String nome, String email, String login, String senha, String genero) {
+    public Usuario(String idusuario ,String nome, String email, String login, String senha, String genero) {
+        setIdusuario(idusuario);
         setNome(nome);
         setEmail(email);
         setLogin(login);
@@ -74,6 +76,12 @@ public class Usuario {
         while(resultado.next()) {
             String idusuario = resultado.getString("idusuario");
             String nome = resultado.getString("nome");
+            String email = resultado.getString("email");
+            String login = resultado.getString("login");
+            String senha = resultado.getString("senha");
+            String genero = resultado.getString("genero");
+            Usuario user = new Usuario(idusuario, nome, email, login, senha, genero);
+            ListaUsuarios.add(user);
         }
         return ListaUsuarios;
     }
