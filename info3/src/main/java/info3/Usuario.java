@@ -21,8 +21,17 @@ public class Usuario {
     private String login;
     private String senha;
     private String genero;
-    
+
     //método construtor 
+
+      public Usuario(String nome, String email, String login, String senha, String genero) {
+        setNome(nome);
+        setEmail(email);
+        setLogin(login);
+        setSenha(senha);
+        setGenero(genero);
+    }               
+
 
     public Usuario(String idusuario ,String nome, String email, String login, String senha, String genero) {
         setIdusuario(idusuario);
@@ -32,17 +41,17 @@ public class Usuario {
         setSenha(senha);
         setGenero(genero);
     }               
-     
-    
+
+
     //método construtor
     public Usuario() {
-    
+
     }
 
     public Usuario(String idusuario) {
-        
+
     }
-    
+
     //método que cadastra um novo usuário
     public void Cadastrar() throws SQLException {
         Connection conexao = Conexao.getConexao();
@@ -56,17 +65,17 @@ public class Usuario {
         consulta.setString(3, this.login);
         consulta.setString(4, this.senha);
         consulta.setString(5, this.genero);
-        
+
         //executando a consulta/comando SQL
         consulta.executeUpdate();
-        
+
        //após cadastrar queremos pegar o idusuario
        ResultSet resultado = consulta.getGeneratedKeys();
        resultado.next();
        String idusuario = resultado.getString(1);
        this.idusuario = idusuario;
     }
-    
+
     public ArrayList<Usuario> getUsuarios() throws SQLException {
         ArrayList<Usuario> ListaUsuarios = new ArrayList<>();
         Connection conexao = Conexao.getConexao();
@@ -85,8 +94,8 @@ public class Usuario {
         }
         return ListaUsuarios;
     }
-    
-    
+
+
     public String getIdusuario() {
         return idusuario;
     }
