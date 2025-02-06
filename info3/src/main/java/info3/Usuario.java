@@ -1,6 +1,5 @@
 package info3;
 
-
 //Importando classes e pacotes necessários
 import com.mysql.cj.xdevapi.AddResult;
 import com.mysql.cj.xdevapi.Result;
