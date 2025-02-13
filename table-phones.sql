@@ -1,5 +1,5 @@
 SHOW SCHEMAS;
-
+CREATE SCHEMA info3;
 CREATE SCHEMA revisao2;
 
 USE revisao2;
