@@ -32,7 +32,7 @@ public class Telefones {
         ResultSet resultado = comando.getGeneratedKeys();
         
         if (resultado.next()) {
-            th
+            this.telefone = resultado.getString(sql);
         }
     }
     
