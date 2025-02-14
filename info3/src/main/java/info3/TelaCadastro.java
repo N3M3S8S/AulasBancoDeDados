@@ -254,7 +254,7 @@ public class TelaCadastro extends javax.swing.JFrame {
             u.Cadastrar();
             //cadastrando telefones
                 //Verificando quantos campos foram preenchidos
-            if (TexTel.getText() != "") {
+            if (!"".equals(TexTel.getText())) {
                 Telefones t = new Telefones();
                 t.setTelefone(TexTel.getText());
                 t.setIdusuarios(u.getIdusuario());
