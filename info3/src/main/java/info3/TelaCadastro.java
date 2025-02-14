@@ -253,8 +253,12 @@ public class TelaCadastro extends javax.swing.JFrame {
         try {
             u.Cadastrar();
             //cadastrando telefones
-            for (int i=1; i<=3; i++) {
-                
+                //Verificando quantos campos foram preenchidos
+            if (TexTel.getText() != "") {
+                Telefones t = new Telefones();
+                t.setTelefone(TexTel.getText());
+                t.setIdusuarios(u.getIdusuario());
+                t.cadastrar();
             }
         } catch (SQLException ex) {
             Logger.getLogger(TelaCadastro.class.getName()).log(Level.SEVERE, null, ex);
