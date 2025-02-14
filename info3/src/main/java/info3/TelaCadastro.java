@@ -176,7 +176,7 @@ public class TelaCadastro extends javax.swing.JFrame {
                     .addGroup(TelaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(BotaoHomem)
                         .addComponent(BotaoMulher)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 144, Short.MAX_VALUE)
                 .addComponent(BotaoCadastrar)
                 .addGap(22, 22, 22))
         );
@@ -195,29 +195,13 @@ public class TelaCadastro extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BotaoHomemStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_BotaoHomemStateChanged
-
-    }//GEN-LAST:event_BotaoHomemStateChanged
-
-    private void BotaoHomemKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BotaoHomemKeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BotaoHomemKeyTyped
-
-    private void BotaoHomemMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoHomemMouseDragged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BotaoHomemMouseDragged
-
-    private void BotaoHomemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoHomemMouseClicked
-
-    }//GEN-LAST:event_BotaoHomemMouseClicked
-
     private void BotaoCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoCadastrarActionPerformed
         String nome = RecebeNome.getText();
         String email = RecebeEmail.getText();
         String login = RecebeLogin.getText();
         String senha = new String(RecebeSenha.getPassword());
         String genero = selgenero();
-        
+
         Usuario u = new Usuario(nome, email, login, senha, genero);
         try {
             u.Cadastrar();
@@ -228,9 +212,25 @@ public class TelaCadastro extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(rootPane, "Cadastro concluído com sucesso! Chave do usuário: " + u.getIdusuario());
     }//GEN-LAST:event_BotaoCadastrarActionPerformed
 
+    private void BotaoHomemKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BotaoHomemKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoHomemKeyTyped
+
     private void BotaoHomemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoHomemActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_BotaoHomemActionPerformed
+
+    private void BotaoHomemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoHomemMouseClicked
+
+    }//GEN-LAST:event_BotaoHomemMouseClicked
+
+    private void BotaoHomemMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoHomemMouseDragged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotaoHomemMouseDragged
+
+    private void BotaoHomemStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_BotaoHomemStateChanged
+
+    }//GEN-LAST:event_BotaoHomemStateChanged
 
     /**
      * @param args the command line arguments

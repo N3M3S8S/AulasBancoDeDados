@@ -15,7 +15,7 @@ describe usuario;
 describe usuario2;
 
 -- criando novas tabelas (modelo para criar modelos)
-CREATE TABLE usuario2 (
+CREATE TABLE usuario (
 	idusuario INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
