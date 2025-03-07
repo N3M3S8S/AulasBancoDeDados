@@ -36,6 +36,9 @@ public class TelaCadastro extends javax.swing.JFrame {
         RecebeEmail.setText("");
         RecebeLogin.setText("");
         RecebeSenha.setText("");
+        TexTel.setText("");
+        TexTel1.setText("");
+        TexTel2.setText("");
     }
     
     public TelaCadastro() {
@@ -254,9 +257,21 @@ public class TelaCadastro extends javax.swing.JFrame {
             u.Cadastrar();
             //cadastrando telefones
                 //Verificando quantos campos foram preenchidos
-            if (!"".equals(TexTel.getText())) {
+            if (!TexTel.getText().isBlank()) {
                 Telefones t = new Telefones();
                 t.setTelefone(TexTel.getText());
+                t.setIdusuarios(u.getIdusuario());
+                t.cadastrar();
+            }
+            if (!TexTel1.getText().isBlank()) {
+                Telefones t = new Telefones();
+                t.setTelefone(TexTel1.getText());
+                t.setIdusuarios(u.getIdusuario());
+                t.cadastrar();
+            }
+            if (!TexTel2.getText().isBlank()) {
+                Telefones t = new Telefones();
+                t.setTelefone(TexTel2.getText());
                 t.setIdusuarios(u.getIdusuario());
                 t.cadastrar();
             }

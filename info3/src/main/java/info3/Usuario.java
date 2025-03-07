@@ -1,8 +1,7 @@
 package info3;
 
 //Importando classes e pacotes necessários
-import com.mysql.cj.xdevapi.AddResult;
-import com.mysql.cj.xdevapi.Result;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -71,8 +70,7 @@ public class Usuario {
        //após cadastrar queremos pegar o idusuario
        ResultSet resultado = consulta.getGeneratedKeys();
        resultado.next();
-       String idusuario = resultado.getString(1);
-       this.idusuario = idusuario;
+       idusuario = resultado.getString(1);
     }
 
     public ArrayList<Usuario> getUsuarios() throws SQLException {

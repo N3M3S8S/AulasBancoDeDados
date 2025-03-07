@@ -8,11 +8,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Telefones {
-    private String idtelefones;
-    private String idusuarios;
-    private Usuario usuario;
+    private String idtelefone;
+    private String idusuario;
     private String telefone;
 
+    
+    
     //metodo que é executado ao instanciar a classe (construtor)
     public Telefones() {
         
@@ -20,44 +21,34 @@ public class Telefones {
     
     public void cadastrar () throws SQLException {
         Connection conexao = Conexao.getConexao();
-        String sql = "INSERT INTO telefones (idusuario, telefones) VALUES (?, ?)";
+        String sql = "INSERT INTO telefones (idusuario, telefone) VALUES (?, ?)";
         //Filtrando ataques ao banco de dados
         
         PreparedStatement comando = conexao.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
-        comando.setString(1, this.idusuarios);
+        comando.setString(1, this.idusuario);
         comando.setString(2, this.telefone);
         comando.executeUpdate();
         
         //Recuperando chave utilizada
         ResultSet resultado = comando.getGeneratedKeys();
-        
-        if (resultado.next()) {
-            this.telefone = resultado.getString(sql);
-        }
+        resultado.next();
+        idtelefone = resultado.getString(1);
     }
     
     public String getIdtelefones() {
-        return idtelefones;
+        return idtelefone;
     }
 
     public void setIdtelefones(String idtelefones) {
-        this.idtelefones = idtelefones;
+        this.idtelefone = idtelefones;
     }
 
     public String getIdusuarios() {
-        return idusuarios;
+        return idusuario;
     }
 
     public void setIdusuarios(String idusuarios) {
-        this.idusuarios = idusuarios;
-    }
-
-    public Usuario getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
+        this.idusuario = idusuarios;
     }
 
     public String getTelefone() {
@@ -67,6 +58,4 @@ public class Telefones {
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
-    
-    
 }
